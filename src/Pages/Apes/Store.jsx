@@ -4,7 +4,7 @@ import { add } from "../../Redux/features/Product/ProductSlice";
 
 const Store = () => {
   const dispatch = useDispatch();
-  const handleAdd = item => dispatch(add(item));
+  const handleAdd = (item) => dispatch(add(item));
   const { products } = useSelector((state) => state.products);
   return (
     <div className="container mx-auto px-4">

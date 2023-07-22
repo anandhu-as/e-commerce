@@ -17,7 +17,14 @@ export const NavBar = () => {
           store <i className="fa-solid fa-dollar-sign"></i>
         </Link>
         <Link className="animate__animated animate__fadeInDown" to="/cart">
-          Bag <i className="fa-solid fa-bag-shopping"></i> {cart.length}
+          Bag <i className="fa-solid fa-bag-shopping "></i>{" "}
+          {cart.length === 0 ? null : cart.length}
+        </Link>
+        <Link
+          className="animate__animated animate__fadeInDown"
+          to="/notification"
+        >
+          <i className="fa-solid fa-bell fa-shake"></i>
         </Link>
       </div>
     </div>
