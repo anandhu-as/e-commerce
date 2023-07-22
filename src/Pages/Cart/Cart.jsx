@@ -11,7 +11,7 @@ const Cart = () => {
         <h2 className="text-2xl font-bold mb-4 bg-slate-800 ">
           {cart.length === 0 ? "bag is empty" : `${cart.length} item on bag`}
         </h2>
-        <h3 className="bg-slate-800" >Total :</h3>
+        <h3 className="bg-slate-800">Total :</h3>
       </div>
 
       <div className="flex-1 p-4">

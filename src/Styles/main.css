@@ -23,7 +23,6 @@
   border-radius: 50%;
 }
 
-
 .navbar h3 {
   margin: 0;
   font-size: 20px;
@@ -40,7 +39,7 @@
 }
 
 .navbar a:hover {
-  background-color: #555;
+  color: #fff;
 }
 
 .navbar i {

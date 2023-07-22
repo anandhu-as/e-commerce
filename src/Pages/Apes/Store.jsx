@@ -4,7 +4,7 @@ import { add } from "../../Redux/features/Product/ProductSlice";
 
 const Store = () => {
   const dispatch = useDispatch();
-
+  const handleAdd = item => dispatch(add(item));
   const { products } = useSelector((state) => state.products);
   return (
     <div className="container mx-auto px-4">
@@ -24,7 +24,7 @@ const Store = () => {
             <h3 className="text font-medium mb-2 text-white">${item.price}</h3>
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={() => dispatch(add({ item }))}
+              onClick={() => handleAdd({ item })}
             >
               Add
             </button>
