@@ -30,3 +30,4 @@ const datas = [
 ];
 export const logo =
   "https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149612197.jpg?w=740&t=st=1690000806~exp=1690001406~hmac=4c18fef59951047ed7855dc0361d49d3d86fcd4e27046774e00baafbe7e02465";
+export const banner='https://play-lh.googleusercontent.com/y9G7_IG7EtSwNJNgJrtvRciYEoCPPTVTponbwcKjO8Ksp0VKQvWrhRctcT0cK5I6SAnk'

@@ -9,7 +9,7 @@ export const NavBar = () => {
       <img src={logo} alt="" />
       <h3 className="animate__animated animate__bounceInLeft">NFT-APES</h3>
       <div className="navbar-right">
-        <Link className="animate__animated animate__fadeInDown" to="/apes">
+        <Link className="animate__animated animate__fadeInDown" to="/store">
           Apes <i className="fa-solid fa-dollar-sign"></i>
         </Link>
         <Link className="animate__animated animate__fadeInDown" to="/cart">
