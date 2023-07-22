@@ -20,13 +20,19 @@ const Store = () => {
               alt={item.name}
               className="w-full h-40 object-cover mb-4"
             />
-            <h2 className="text font-bold mb-2">{item.name}</h2>
-            <h3 className="text font-medium mb-2">${item.price}</h3>
+            <h2 className="text font-bold mb-2 text-white">{item.name}</h2>
+            <h3 className="text font-medium mb-2 text-white">${item.price}</h3>
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={() => dispatch(add({item}))}
+              onClick={() => dispatch(add({ item }))}
             >
-              Add To Cart
+              Add
+            </button>
+            <button className="mt-2">
+              <i className="fas fa-heart text-white pl-12"></i>
+            </button>
+            <button className="mt-2">
+              <i className="fa-solid fa-star text-white pl-6"></i>
             </button>
           </div>
         ))}

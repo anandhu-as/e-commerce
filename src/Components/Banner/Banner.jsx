@@ -14,7 +14,7 @@ const Banner = () => {
       </div>
       <div className="w-1/2">
         <h1 className="text-4xl font-bold mb-4 text-pink-800 pr-6 animate__animated animate__fadeInDown heading-animate">
-          What is NFT-APES
+          What is NFT-APES ?
         </h1>
         <p className="text-purple-600 pr-4 animate__animated animate__fadeInDown text-animate">
           Bored Apes are the limited ten thousand Ethereum-based NFTs

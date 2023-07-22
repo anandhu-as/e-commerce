@@ -13,11 +13,13 @@ const ProductSlice = createSlice({
     add: (state, action) => {
       const { item } = action.payload;
       const same = state.cart.find((cartItem) => cartItem.id === item.id);
-      if (same) alert("Item is already in the cart")
-      else state.cart.push(item)
+      same ? alert("Item is already in the cart") : state.cart.push(item);
     },
+    remove:(state,action)=>{
+state.cart=state.cart.filter((item)=>item.id!==action.payload)
+    }
   },
 });
 
 export default ProductSlice.reducer;
-export const { add } = ProductSlice.actions;
+export const { add ,remove} = ProductSlice.actions;
