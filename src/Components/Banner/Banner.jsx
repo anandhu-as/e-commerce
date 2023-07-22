@@ -24,7 +24,7 @@ const Banner = () => {
           them.
         </p>
         <div className="flex items-start mt-4">
-          <button className="px-6 py-3 bg-purple-700 text-white rounded hover:bg-purple-800 mt-4">
+          <button className="px-6 py-3 bg-purple-700 text-white rounded hover:bg-purple-800 mt-4 animate__animated animate__fadeInUp">
             <Link to="/store" className="text-white bg-purple-700">
               Explore
             </Link>
