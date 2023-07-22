@@ -1,19 +1,21 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { remove } from "../../Redux/features/Product/ProductSlice";
+import { clear, remove } from "../../Redux/features/Product/ProductSlice";
 const Cart = () => {
   const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state.products);
+  const { cart, total } = useSelector((state) => state.products);
 
   return (
     <div className="flex">
       <div className="  w-1/4 py-4 px-8 text-white bg-slate-800 h-screen">
         <h2 className="text-2xl font-bold mb-4 bg-slate-800 ">
-          {cart.length === 0 ? "bag is empty" : `${cart.length} item on bag`}
+          {cart.length === 0 ? "bag is empty" : ` ${cart.length} item on bag`}
         </h2>
-        <h3 className="bg-slate-800">Total :</h3>
+        <h3 className="bg-slate-800">Total : $ {total} USD</h3>
+        <button className="px-4 py-2 bg-red-500 rounded mt-8" onClick={()=>dispatch(clear())}>
+          Remove all
+        </button>
       </div>
-
       <div className="flex-1 p-4">
         {cart.map((data) => (
           <div key={data.id} className="flex items-center mb-4">
@@ -24,7 +26,9 @@ const Cart = () => {
             </div>
             <button
               className="ml-auto px-4 py-2 bg-slate-600 text-white rounded-lg"
-              onClick={() => dispatch(remove(data.id))}
+              onClick={() =>
+                dispatch(remove({ id: data.id, price: data.price }))
+              }
             >
               Remove
             </button>

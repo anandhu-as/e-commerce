@@ -21,10 +21,12 @@ const Store = () => {
               className="w-full h-40 object-cover mb-4"
             />
             <h2 className="text font-bold mb-2 text-white">{item.name}</h2>
-            <h3 className="text font-medium mb-2 text-white">${item.price}</h3>
+            <h3 className="text font-medium mb-2 text-white">
+              $ {item.price} USD
+            </h3>
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={() => handleAdd({ item })}
+              onClick={() => handleAdd({ item, price: item.price })}
             >
               Add
             </button>
