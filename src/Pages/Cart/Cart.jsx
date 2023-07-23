@@ -20,7 +20,10 @@ const Cart = () => {
           Remove all
         </button>
         <button className="px-4 py-2 bg-blue-400 rounded mt-8 ml-4 ">
-          <Link to="/store" className="bg-blue-400"> continue browsing</Link>
+          <Link to="/store" className="bg-blue-400">
+            {" "}
+            continue browsing
+          </Link>
         </button>
       </div>
       <div className="flex-1 p-4 bg-slate-800">
