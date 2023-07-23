@@ -1,12 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "../../Redux/features/Product/ProductSlice";
+import { addLike } from "../../Redux/features/Reactions/EmojiSlice";
 
 const Store = () => {
   const dispatch = useDispatch();
   const handleAdd = (item) => dispatch(add(item));
   const { products } = useSelector((state) => state.products);
-  const { like } = useSelector((state) => state.emoji);
+  const { likes } = useSelector((state) => state.emoji);
   return (
     <div className="container mx-auto px-4 pt-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -31,7 +32,12 @@ const Store = () => {
             >
               Add
             </button>
-            <button className="mt-2 ml-8">❤️ </button>
+            <button
+              className="mt-2 ml-8"
+              onClick={() => dispatch(addLike(item.id))}
+            >
+              ❤️ {likes[item.id]}
+            </button>
             <button className="mt-2 ml-8">😂</button>
             <button className="mt-2 ml-8">👎</button>
           </div>
