@@ -6,6 +6,7 @@ const initialState = {
   cart: [],
   cartItemCount: 0,
   total: 0,
+  like:0
 };
 const ProductSlice = createSlice({
   name: "products",

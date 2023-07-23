@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 const initialState = {
   like: 0,
   disLike: 0,
@@ -7,12 +8,6 @@ const initialState = {
 const EmojiSlice = createSlice({
   name: "emoji",
   initialState,
-  reducers: {
-    addLike: (state, action) => {
-      const { id } = action.payload;
-
-    },
-  },
+  reducers: {},
 });
 export default EmojiSlice.reducer;
-export const { addLike } = EmojiSlice.actions;
