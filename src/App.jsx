@@ -5,6 +5,7 @@ import Banner from "./Components/Banner/Banner";
 import Store from "./Pages/Apes/Store";
 import Cart from "./Pages/Cart/Cart";
 import Notification from "./Pages/Notifications/Notification";
+import About from "./Pages/About/About";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/store" element={<Store />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/notification" element={<Notification />} />
+        <Route path="/about" element={<About/>} />
       </Routes>
     </BrowserRouter>
   );

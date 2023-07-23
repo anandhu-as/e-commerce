@@ -1,18 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  likes: {},
-  disLike: {},
-  laugh: {},
+  reactions: {
+    likes: {},
+    thumb: {},
+    laugh: {},
+  },
 };
 const EmojiSlice = createSlice({
   name: "emoji",
   initialState,
   reducers: {
-    addLike: (state, action) => {
-      const id = action.payload;
-      state.likes[id] ? (state.likes[id] += 1) : (state.likes[id] = 1)
+    addReaction: (state, action) => {
+      const { id, type } = action.payload;
+      state.reactions[type][id]
+        ? (state.reactions[type][id] += 1)
+        : (state.reactions[type][id] = 1);
     },
   },
 });
 export default EmojiSlice.reducer;
-export const { addLike } = EmojiSlice.actions;
+export const { addReaction } = EmojiSlice.actions;

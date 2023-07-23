@@ -10,9 +10,9 @@ const Notification = () => {
       {cart.length === 0 && (
         <h1 className="text-white font-bold mt-4">no Notifications </h1>
       )}
-      {cart.map((data, index) => (
-        <div>
-          <h1 key={index} className="text-white font-bold mt-4">
+      {cart.map((data) => (
+        <div key={data.id}>
+          <h1  className="text-white font-bold mt-4">
             * {data.name} added to bag. Price: {data.price} USD
           </h1>
         </div>

@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "../../Redux/features/Product/ProductSlice";
-import { addLike } from "../../Redux/features/Reactions/EmojiSlice";
-
+import { addReaction } from "../../Redux/features/Reactions/EmojiSlice";
 const Store = () => {
   const dispatch = useDispatch();
   const handleAdd = (item) => dispatch(add(item));
   const { products } = useSelector((state) => state.products);
-  const { likes } = useSelector((state) => state.emoji);
+  const handleReaction = (id, type) => dispatch(addReaction({ id, type }));
+  const { reactions } = useSelector((state) => state.emoji);
   return (
     <div className="container mx-auto px-4 pt-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -34,12 +34,22 @@ const Store = () => {
             </button>
             <button
               className="mt-2 ml-8"
-              onClick={() => dispatch(addLike(item.id))}
+              onClick={() => handleReaction(item.id, "likes")}
             >
-              ❤️ {likes[item.id]}
+              ❤️ {reactions.likes[item.id]}
             </button>
-            <button className="mt-2 ml-8">😂</button>
-            <button className="mt-2 ml-8">👎</button>
+            <button
+              className="mt-2 ml-8"
+              onClick={() => handleReaction(item.id, "laugh")}
+            >
+              😂 {reactions.laugh[item.id]}
+            </button>
+            <button
+              className="mt-2 ml-8"
+              onClick={() => handleReaction(item.id, "thumb")}
+            >
+              👎 {reactions.thumb[item.id]}
+            </button>
           </div>
         ))}
       </div>
