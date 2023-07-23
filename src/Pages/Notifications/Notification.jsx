@@ -7,6 +7,9 @@ const Notification = () => {
 
   return (
     <div className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 border border-gray-400 rounded p-4 ">
+      {cart.length === 0 && (
+        <h1 className="text-white font-bold mt-4">no Notifications </h1>
+      )}
       {cart.map((data, index) => (
         <div>
           <h1 key={index} className="text-white font-bold mt-4">
