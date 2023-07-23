@@ -7,20 +7,21 @@ import { useSelector } from "react-redux";
 export const NavBar = () => {
   const { cart } = useSelector((state) => state.products);
   return (
-    <div className="navbar">
+    <div className="navbar fixed w-full">
       <img src={logo} alt="" />
       <h3 className="animate__animated animate__bounceInLeft">
         <Link to="/">NFT-APES</Link>
       </h3>
       <div className="navbar-right">
         <Link className="animate__animated animate__fadeInDown" to="/cart">
-          <i className="fa-solid fa-cart-shopping pr-4"></i>{cart.length === 0 ? null : cart.length}
+          <i className="fa-solid fa-cart-shopping pr-4"></i>
+          {cart.length === 0 ? null : cart.length}
         </Link>
         <Link
           className="animate__animated animate__fadeInDown"
           to="/notification"
-        >
-          <i className="fa-solid fa-bell fa-shake"></i>
+        > 
+          <i className="fa-solid fa-bell fa-shake"></i>    {cart.length === 0 ? null : cart.length}
         </Link>
         <Link className="animate__animated animate__fadeInDown" to="/store">
           store
