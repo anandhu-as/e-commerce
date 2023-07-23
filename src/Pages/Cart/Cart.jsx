@@ -12,7 +12,10 @@ const Cart = () => {
           {cart.length === 0 ? "bag is empty" : ` ${cart.length} item on bag`}
         </h2>
         <h3 className="bg-slate-800">Total : $ {total} USD</h3>
-        <button className="px-4 py-2 bg-red-500 rounded mt-8" onClick={()=>dispatch(clear())}>
+        <button
+          className="px-4 py-2 bg-red-500 rounded mt-8"
+          onClick={() => dispatch(clear())}
+        >
           Remove all
         </button>
       </div>

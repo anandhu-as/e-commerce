@@ -13,18 +13,20 @@ export const NavBar = () => {
         <Link to="/">NFT-APES</Link>
       </h3>
       <div className="navbar-right">
-        <Link className="animate__animated animate__fadeInDown" to="/store">
-          store <i className="fa-solid fa-dollar-sign"></i>
-        </Link>
         <Link className="animate__animated animate__fadeInDown" to="/cart">
-          Bag <i className="fa-solid fa-bag-shopping "></i>{" "}
-          {cart.length === 0 ? null : cart.length}
+          <i className="fa-solid fa-cart-shopping pr-4"></i>{cart.length === 0 ? null : cart.length}
         </Link>
         <Link
           className="animate__animated animate__fadeInDown"
           to="/notification"
         >
           <i className="fa-solid fa-bell fa-shake"></i>
+        </Link>
+        <Link className="animate__animated animate__fadeInDown" to="/store">
+          store
+        </Link>
+        <Link className="animate__animated animate__fadeInDown" to="/about">
+          About
         </Link>
       </div>
     </div>
