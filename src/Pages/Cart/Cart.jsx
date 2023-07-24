@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart, total } = useSelector((state) => state.products);
+
   return (
     <div className="flex pt-16">
       <div className="w-1/4 py-4 px-8 text-white bg-slate-800 h-screen">

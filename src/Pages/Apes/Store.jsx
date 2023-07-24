@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "../../Redux/features/Product/ProductSlice";
 import { addReaction } from "../../Redux/features/Reactions/EmojiSlice";
+import Detail from "../ProductDetail/Detail";
 const Store = () => {
   const dispatch = useDispatch();
   const handleAdd = (item) => dispatch(add(item));
   const { products } = useSelector((state) => state.products);
   const handleReaction = (id, type) => dispatch(addReaction({ id, type }));
   const { reactions } = useSelector((state) => state.emoji);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const handleSelect = (data) => {
+    setSelectedProduct(data);
+  };
   return (
     <div className="container mx-auto px-4 pt-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -20,7 +25,7 @@ const Store = () => {
             <img
               src={item.image}
               alt={item.name}
-              className="w-full h-40 object-cover mb-4"
+              className="w-full h-40 object-cover mb-4 cursor-pointer"
             />
             <h2 className="text font-bold mb-2 text-white">{item.name}</h2>
             <h3 className="text font-medium mb-2 text-white">
@@ -33,26 +38,39 @@ const Store = () => {
               Add
             </button>
             <button
-              className="mt-2 ml-8"
+              className="mt-2 ml-4"
               onClick={() => handleReaction(item.id, "likes")}
             >
               ❤️ {reactions.likes[item.id]}
             </button>
             <button
-              className="mt-2 ml-8"
+              className="mt-2 ml-4"
               onClick={() => handleReaction(item.id, "laugh")}
             >
               😂 {reactions.laugh[item.id]}
             </button>
             <button
-              className="mt-2 ml-8"
+              className="mt-2 ml-4"
               onClick={() => handleReaction(item.id, "thumb")}
             >
               👎 {reactions.thumb[item.id]}
             </button>
+            <button
+              className="text-white ml-4 font-bold "
+              onClick={() => handleSelect(item)}
+            >
+              {" "}
+              details
+            </button>
           </div>
         ))}
       </div>
+      {selectedProduct && (
+        <Detail
+          selectedProduct={selectedProduct}
+          setSelectedProduct={setSelectedProduct}
+        />
+      )}
     </div>
   );
 };

@@ -3,12 +3,11 @@ import "animate.css";
 import { Link } from "react-router-dom";
 import { logo } from "../../NFT/Data";
 import { useSelector } from "react-redux";
-
 export const NavBar = () => {
   const { cart } = useSelector((state) => state.products);
   return (
     <div className="navbar fixed w-full">
-      <img src={logo} alt="" />
+      <img src={logo} className="cursor-pointer" alt="" />
       <h3 className="animate__animated animate__bounceInLeft">
         <Link to="/">NFT-APES</Link>
       </h3>
