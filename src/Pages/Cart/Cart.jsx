@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clear, remove } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
+import Card from "../Card/Card";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart, total } = useSelector((state) => state.products);
-
+  const [selected, setSelected] = useState(null);
   return (
     <div className="flex pt-16">
       <div className="w-1/4 py-4 px-8 text-white bg-slate-800 h-screen">
@@ -43,13 +44,17 @@ const Cart = () => {
               >
                 Remove
               </button>
-              <button className="px-4 py-2 bg-green-600 text-white rounded-lg mr-4">
+              <button
+                className="px-4 py-2 bg-green-600 text-white rounded-lg mr-4"
+                onClick={() => setSelected(data)}
+              >
                 Buy Now
               </button>
             </div>
           </div>
         ))}
       </div>
+      {selected && <Card {...selected} setSelected={setSelected} />}
     </div>
   );
 };

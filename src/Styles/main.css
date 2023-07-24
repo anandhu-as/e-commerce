@@ -49,8 +49,8 @@ body::-webkit-scrollbar {
   background-color: #100f10;
   margin-left: 5px;
 }
-#name{
-  color: #B80065;
+#name {
+  color: #b80065;
 }
 .navbar-right {
   display: flex;
