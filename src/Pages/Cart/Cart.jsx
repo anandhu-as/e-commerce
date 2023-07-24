@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart, total } = useSelector((state) => state.products);
-
+ 
   return (
     <div className="flex pt-16">
       <div className="  w-1/4 py-4 px-8 text-white bg-slate-800 h-screen">
@@ -34,6 +34,7 @@ const Cart = () => {
               <h2 className="text-white font-bold">{data.name}</h2>
               <h3 className="text-white">{data.price}</h3>
             </div>
+            <span></span>
             <button
               className="ml-auto px-4 py-2 bg-slate-600 text-white rounded-lg mr-6"
               onClick={() =>

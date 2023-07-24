@@ -25,7 +25,7 @@ export const NavBar = () => {
           {cart.length === 0 ? null : cart.length}
         </Link>
         <Link className="animate__animated animate__fadeInDown " to="/store">
-          store
+          Buy an Ape
         </Link>
         <Link className="animate__animated animate__fadeInDown " to="/about">
           About

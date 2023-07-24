@@ -75,7 +75,9 @@ export const datas = [
     price: 1240000,
   },
 ];
-export const logo =
-  "https://cdn-icons-png.flaticon.com/512/6298/6298900.png";
+export const logo = "https://cdn-icons-png.flaticon.com/512/6298/6298900.png";
 export const banner =
   "https://play-lh.googleusercontent.com/y9G7_IG7EtSwNJNgJrtvRciYEoCPPTVTponbwcKjO8Ksp0VKQvWrhRctcT0cK5I6SAnk";
+export const about = `he world of non-fungible tokens (NFTs) has exploded in recent years, with unique digital assets fetching millions of $ at auction. One of the most popular NFTs is that of Bored Apes, Mutant Apes, and Pirate Apes.
+
+All of them monkeys have taken the NFT world by storm, each with its unique style and backstory. The Bored Apes Yacht features 10,000 unique apes, each with its distinctive traits and accessories. The Mutant Apes collection is a spinoff of the Bored Apes, featuring mutated versions of the original apes. The Pirate Apes collection is inspired by the Pirates of the Caribbean franchise, featuring monkeys dressed in pirate garb and wielding swords and pistols.`
