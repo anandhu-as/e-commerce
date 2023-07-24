@@ -25,6 +25,7 @@ const Store = () => {
               src={item.image}
               alt={item.name}
               className="w-full h-40 object-cover mb-4 cursor-pointer"
+              onClick={() => handleSelect(item)}
             />
             <h2 className="text font-bold mb-2 text-white">
               {item.name}{" "}
@@ -68,10 +69,7 @@ const Store = () => {
         ))}
       </div>
       {selectedProduct && (
-        <Detail
-          selectedProduct={selectedProduct}
-          setSelectedProduct={setSelectedProduct}
-        />
+        <Detail {...selectedProduct} setSelectedProduct={setSelectedProduct} />
       )}
     </div>
   );

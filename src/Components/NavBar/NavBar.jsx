@@ -10,7 +10,7 @@ export const NavBar = () => {
     <div className="navbar fixed w-full">
       <img src={logo} className="cursor-pointer" alt="" />
       <h3 className="animate__animated animate__bounceInLeft">
-        <Link to="/">NFT-APES</Link>
+        <Link to="/" id="name">NFT-APES</Link>
       </h3>
       <div className="navbar-right">
         <Link className="animate__animated animate__fadeInDown" to="/cart">
