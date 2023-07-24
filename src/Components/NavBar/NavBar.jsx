@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { logo } from "../../NFT/Data";
 import { useSelector } from "react-redux";
 export const NavBar = () => {
-  const { cart } = useSelector((state) => state.products);
+  const { cart, sameItem } = useSelector((state) => state.products);
+  const message = cart.length + sameItem.length;
   return (
     <div className="navbar fixed w-full">
       <img src={logo} className="cursor-pointer" alt="" />
@@ -21,7 +22,7 @@ export const NavBar = () => {
           to="/notification"
         >
           <i className="fa-solid fa-bell fa-shake"></i>{" "}
-          {cart.length === 0 ? null : cart.length}
+          {message === 0 ? null : message}
         </Link>
         <Link className="animate__animated animate__fadeInDown " to="/store">
           Buy an Ape

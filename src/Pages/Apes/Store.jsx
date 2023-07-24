@@ -19,15 +19,24 @@ const Store = () => {
         {products.map((item) => (
           <div
             key={item.id}
-            className="bg-black rounded-lg p-4 shadow-md hover:shadow-lg"
-            style={{ color: "purple" }}
+            className="bg-black rounded-lg p-4 shadow-md hover:shadow-lg text-purple-600"
           >
             <img
               src={item.image}
               alt={item.name}
               className="w-full h-40 object-cover mb-4 cursor-pointer"
             />
-            <h2 className="text font-bold mb-2 text-white">{item.name}</h2>
+            <h2 className="text font-bold mb-2 text-white">
+              {item.name}{" "}
+              <button
+                className="text-white ml-4 font-bold ml-4 "
+                onClick={() => handleSelect(item)}
+              >
+                {" "}
+                show details
+              </button>
+            </h2>
+
             <h3 className="text font-medium mb-2 text-white">
               $ {item.price} USD
             </h3>
@@ -38,29 +47,22 @@ const Store = () => {
               Add
             </button>
             <button
-              className="mt-2 ml-4"
+              className="mt-2 ml-8"
               onClick={() => handleReaction(item.id, "likes")}
             >
               ❤️ {reactions.likes[item.id]}
             </button>
             <button
-              className="mt-2 ml-4"
+              className="mt-2 ml-8"
               onClick={() => handleReaction(item.id, "laugh")}
             >
               😂 {reactions.laugh[item.id]}
             </button>
             <button
-              className="mt-2 ml-4"
+              className="mt-2 ml-8"
               onClick={() => handleReaction(item.id, "thumb")}
             >
               👎 {reactions.thumb[item.id]}
-            </button>
-            <button
-              className="text-white ml-4 font-bold "
-              onClick={() => handleSelect(item)}
-            >
-              {" "}
-              details
             </button>
           </div>
         ))}

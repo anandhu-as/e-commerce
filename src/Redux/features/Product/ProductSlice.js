@@ -6,6 +6,7 @@ const initialState = {
   cart: [],
   cartItemCount: 0,
   total: 0,
+  sameItem: [],
 };
 const ProductSlice = createSlice({
   name: "products",
@@ -14,7 +15,7 @@ const ProductSlice = createSlice({
     add: (state, action) => {
       const { item, price } = action.payload;
       const same = state.cart.find((cartItem) => cartItem.id === item.id);
-      same ? alert("Item is already in the cart") : state.cart.push(item);
+      same ? state.sameItem.push(item) : state.cart.push(item);
       state.cartItemCount = state.cart.length;
       state.total = state.cartItemCount * price;
     },
@@ -28,8 +29,11 @@ const ProductSlice = createSlice({
       state.cart = [];
       state.total = 0;
     },
+    clearSpam:(state)=>{
+      state.sameItem=[]
+    }
   },
 });
 
 export default ProductSlice.reducer;
-export const { add, remove, clear } = ProductSlice.actions;
+export const { add, remove, clear ,clearSpam} = ProductSlice.actions;
