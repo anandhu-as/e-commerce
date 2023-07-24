@@ -80,4 +80,17 @@ export const banner =
   "https://play-lh.googleusercontent.com/y9G7_IG7EtSwNJNgJrtvRciYEoCPPTVTponbwcKjO8Ksp0VKQvWrhRctcT0cK5I6SAnk";
 export const about = `he world of non-fungible tokens (NFTs) has exploded in recent years, with unique digital assets fetching millions of $ at auction. One of the most popular NFTs is that of Bored Apes, Mutant Apes, and Pirate Apes.
 
-All of them monkeys have taken the NFT world by storm, each with its unique style and backstory. The Bored Apes Yacht features 10,000 unique apes, each with its distinctive traits and accessories. The Mutant Apes collection is a spinoff of the Bored Apes, featuring mutated versions of the original apes. The Pirate Apes collection is inspired by the Pirates of the Caribbean franchise, featuring monkeys dressed in pirate garb and wielding swords and pistols.`
+All of them monkeys have taken the NFT world by storm, each with its unique style and backstory. The Bored Apes Yacht features 10,000 unique apes, each with its distinctive traits and accessories. The Mutant Apes collection is a spinoff of the Bored Apes, featuring mutated versions of the original apes. The Pirate Apes collection is inspired by the Pirates of the Caribbean franchise, featuring monkeys dressed in pirate garb and wielding swords and pistols.`;
+export const paragraph = `  Bored Apes are a specific collection of 10,000 non-fungible tokens.
+Each NFT is a singular image of a unique Bored Ape. Every image is a
+portrait of an Ape with specific characteristics. This app is made for
+learning purposes.`;
+export const aboutMe = `  Hello! My name is Anandhu As, and I'm a frontend developer and
+computer science student. I'm passionate about building user-friendly
+and engaging web applications using new technologies.`;
+export const about2 = `  I have experience working with various frontend frameworks and
+libraries like React, and I love exploring new tools to enhance my
+development skills.`;
+export const about3 = `  In my free time, I enjoy contributing to open-source projects and
+learning new programming concepts. Besides coding, I also like playing
+video games and reading tech blogs.`;
