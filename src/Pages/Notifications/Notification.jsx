@@ -5,12 +5,16 @@ import { clearSpam } from "../../Redux/features/Product/ProductSlice";
 
 const Notification = () => {
   const { cart, sameItem } = useSelector((state) => state.products);
-const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const message = cart.length + sameItem.length;
   return (
     <div className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 border border-gray-400 rounded p-4 ">
       {sameItem.map((item) => {
-        return <h1 className="text-red-500" key={item.id}>{item.name} is already in bag</h1>;
+        return (
+          <h1 className="text-red-500" key={item.id}>
+            {item.name} is already in bag
+          </h1>
+        );
       })}
 
       {message === 0 && (
@@ -28,7 +32,10 @@ const dispatch=useDispatch()
           See cart
         </Link>
       </button>
-      <button className=" mt-4 px-4 py-2 text-white rounded bg-red-500 ml-6" onClick={()=>dispatch(clearSpam())}>
+      <button
+        className=" mt-4 px-4 py-2 text-white rounded bg-red-500 ml-6"
+        onClick={() => dispatch(clearSpam())}
+      >
         ClearSpam
       </button>
     </div>
