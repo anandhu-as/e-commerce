@@ -7,7 +7,7 @@ const Banner = () => {
       <div className="w-1/2 pr-8">
         <img
           src={banner}
-          alt=""
+          alt="home-image"
           className="max-w-full h-auto pl-4 pt-4 image-animate"
         />
       </div>
@@ -18,12 +18,13 @@ const Banner = () => {
         <p className="text-purple-600 pr-4 animate__animated animate__fadeInDown text-animate">
           {homeParagraph}
         </p>
-        <div className="flex items-start mt-4">
-          <button className="px-6 py-3 bg-purple-700 text-white rounded hover:bg-purple-800 mt-4 animate__animated animate__fadeInUp">
-            <Link to="/store" className="text-white bg-purple-700 ">
-              Explore
-            </Link>
-          </button>
+        <div className="flex items-start mt-4  px-6 py-3  animate__animated animate__fadeInDown">
+          <Link
+            to="/store"
+            className=" bg-purple-800 px-6 py-3 bg-purple-700 text-white rounded hover:bg-purple-800 mt-4 animate__animated animate__fadeInUp"
+          >
+            Explore
+          </Link>
         </div>
       </div>
     </div>
