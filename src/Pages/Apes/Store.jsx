@@ -27,22 +27,13 @@ const Store = () => {
               className="w-full h-40 object-cover mb-4 cursor-pointer"
               onClick={() => handleSelect(item)}
             />
-            <h2 className="text font-bold mb-2 text-white">
-              {item.name}{" "}
-              <button
-                className="text-white ml-4 font-bold ml-4 "
-                onClick={() => handleSelect(item)}
-              >
-                {" "}
-                show details
-              </button>
-            </h2>
+            <h2 className="text font-bold mb-2 text-white">{item.name} </h2>
 
             <h3 className="text font-medium mb-2 text-white">
               $ {item.price} USD
             </h3>
             <button
-              className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded ml-2"
+              className="bg-pink-700 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2"
               onClick={() => handleAdd({ item, price: item.price })}
             >
               Add

@@ -9,10 +9,12 @@ const Cart = () => {
   return (
     <div className="flex pt-16">
       <div className="w-1/4 py-4 px-8 text-white  h-screen">
-        <h2 className="text-2xl font-bold mb-4 ">
+        <h2 className="text-2xl font-bold mb-4 animate__animated animate__fadeInLeft">
           {cart.length === 0 ? "bag is empty" : ` ${cart.length} item on bag`}
         </h2>
-        <h3 className="">Total : $ {total} USD</h3>
+        <h3 className="animate__animated animate__fadeInLeft">
+          Total : $ {total} USD
+        </h3>
         <button
           className="px-4 py-2 bg-red-500 rounded mt-8"
           onClick={() => dispatch(clear())}

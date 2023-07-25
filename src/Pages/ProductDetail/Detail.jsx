@@ -1,6 +1,6 @@
 import React from "react";
 import { about } from "../../NFT/Data";
-const Detail = ({ image, name, price, setSelectedProduct }) => {
+const Detail = ({ id, image, name, price, setSelectedProduct }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-10 bg-black bg-opacity-50 ">
       <div className="max-w-md mx-auto bg-zinc-950 p-4 rounded-lg">

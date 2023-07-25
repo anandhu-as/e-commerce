@@ -94,3 +94,8 @@ development skills.`;
 export const about3 = `  In my free time, I enjoy contributing to open-source projects and
 learning new programming concepts. Besides coding, I also like playing
 video games and reading tech blogs.`;
+export const homeParagraph = `   Bored Apes are the limited ten thousand Ethereum-based NFTs
+(Non-Fungible Tokens). They present unique and imaginative images of
+an ape with different facial expressions, clothes, etc. These NFTs
+have gained so much public attention that people spend millions to buy
+them.`;

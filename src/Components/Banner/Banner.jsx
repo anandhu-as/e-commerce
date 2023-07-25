@@ -1,7 +1,6 @@
 import React from "react";
-import { banner } from "../../NFT/Data";
+import { banner, homeParagraph } from "../../NFT/Data";
 import { Link } from "react-router-dom";
-
 const Banner = () => {
   return (
     <div className="banner flex items-center pt-16">
@@ -17,11 +16,7 @@ const Banner = () => {
           What is BORED-APES ?
         </h1>
         <p className="text-purple-600 pr-4 animate__animated animate__fadeInDown text-animate">
-          Bored Apes are the limited ten thousand Ethereum-based NFTs
-          (Non-Fungible Tokens). They present unique and imaginative images of
-          an ape with different facial expressions, clothes, etc. These NFTs
-          have gained so much public attention that people spend millions to buy
-          them.
+          {homeParagraph}
         </p>
         <div className="flex items-start mt-4">
           <button className="px-6 py-3 bg-purple-700 text-white rounded hover:bg-purple-800 mt-4 animate__animated animate__fadeInUp">
@@ -34,5 +29,4 @@ const Banner = () => {
     </div>
   );
 };
-
 export default Banner;
