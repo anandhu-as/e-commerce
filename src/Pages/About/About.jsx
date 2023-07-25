@@ -12,7 +12,7 @@ const About = () => {
           {paragraph}
         </p>
 
-        <h1 className="text-3xl font-bold mb-4 text-white pt-4">About Me</h1>
+        <h1 className="text-3xl font-bold mb-4 text-pink-700 pt-4">About Me</h1>
         <p className="text-lg mb-4 text-white animate__animated animate__fadeInUp">
           {aboutMe}
         </p>
