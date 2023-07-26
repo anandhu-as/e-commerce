@@ -4,15 +4,13 @@ import { add } from "../../Redux/features/Product/ProductSlice";
 import { addReaction } from "../../Redux/features/Reactions/EmojiSlice";
 import Detail from "../ProductDetail/Detail";
 const Store = () => {
-  const dispatch = useDispatch();
-  const handleAdd = (item) => dispatch(add(item));
-  const { products } = useSelector((state) => state.products);
-  const handleReaction = (id, type) => dispatch(addReaction({ id, type }));
   const { reactions } = useSelector((state) => state.emoji);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const handleSelect = (data) => {
-    setSelectedProduct(data);
-  };
+  const dispatch = useDispatch();
+  const handleAdd = item => dispatch(add(item))
+  const { products } = useSelector((state) => state.products);
+  const handleReaction = (id, type) => dispatch(addReaction({ id, type }));
+  const handleSelect = data => setSelectedProduct(data)
   return (
     <div className="container mx-auto px-4 pt-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

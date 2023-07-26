@@ -10,8 +10,8 @@ const EmojiSlice = createSlice({
   name: "emoji",
   initialState,
   reducers: {
-    addReaction: (state, {payload}) => {
-      const { id, type } = {payload};
+    addReaction: (state, action) => {
+      const { id, type } = action.payload;
       state.reactions[type][id]
         ? (state.reactions[type][id] += 1)
         : (state.reactions[type][id] = 1);
