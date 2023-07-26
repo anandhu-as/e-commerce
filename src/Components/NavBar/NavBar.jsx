@@ -7,7 +7,6 @@ export const NavBar = () => {
   const { cart, notifications } = useSelector((state) => state.products);
   const message =
     notifications.cartNotification.length + notifications.sameProduct.length;
-
   return (
     <div className="navbar fixed w-full animate__animated animate__fadeInDown">
       <img src={logo} className="cursor-pointer" alt="" />

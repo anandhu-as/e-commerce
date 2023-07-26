@@ -14,8 +14,8 @@ const ProductSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    add: (state, action) => {
-      const { item, price } = action.payload;
+    add: (state, { payload }) => {
+      const { item, price } = payload;
       const same = state.cart.find((cartItem) => cartItem.id === item.id);
       same
         ? state.notifications.sameProduct.push(item)
@@ -24,8 +24,8 @@ const ProductSlice = createSlice({
       state.cartItemCount = state.cart.length;
       state.total = state.cartItemCount * price;
     },
-    remove: (state, action) => {
-      const { id, price } = action.payload;
+    remove: (state, { payload }) => {
+      const { id, price } = payload;
       state.cart = state.cart.filter((item) => item.id !== id);
       state.cartItemCount = state.cart.length;
       state.total = state.cartItemCount * price;
