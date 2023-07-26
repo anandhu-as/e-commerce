@@ -7,10 +7,10 @@ const Store = () => {
   const { reactions } = useSelector((state) => state.emoji);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const dispatch = useDispatch();
-  const handleAdd = item => dispatch(add(item))
+  const handleAdd = (item) => dispatch(add(item));
   const { products } = useSelector((state) => state.products);
   const handleReaction = (id, type) => dispatch(addReaction({ id, type }));
-  const handleSelect = data => setSelectedProduct(data)
+  const handleSelect = (data) => setSelectedProduct(data);
   return (
     <div className="container mx-auto px-4 pt-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

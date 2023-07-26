@@ -55,7 +55,7 @@ const Cart = () => {
           </div>
         ))}
       </div>
-      {selected && <Card {...selected} setSelected={setSelected}/>}
+      {selected && <Card {...selected} setSelected={setSelected} />}
     </div>
   );
 };

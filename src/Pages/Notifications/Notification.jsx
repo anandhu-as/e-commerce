@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { clearSpam } from "../../Redux/features/Product/ProductSlice";
 
 const Notification = () => {
-  const { cart, notifications } = useSelector((state) => state.products);
+  const { notifications } = useSelector((state) => state.products);
+  const { reactions } = useSelector((state) => state.emoji);
+  const likes = reactions.likes.length;
   const dispatch = useDispatch();
   const message =
     notifications.cartNotification.length && notifications.sameProduct.length;
@@ -27,6 +29,7 @@ const Notification = () => {
           </h1>
         </div>
       ))}
+
       <button className=" mt-4 px-4 py-2 text-white rounded bg-red-500">
         <Link to="/cart" className="bg-red-500">
           See cart
