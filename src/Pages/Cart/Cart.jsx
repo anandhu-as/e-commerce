@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clear, remove } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
+import Card from "../Card/Card";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart, total } = useSelector((state) => state.products);
@@ -54,7 +55,7 @@ const Cart = () => {
           </div>
         ))}
       </div>
-      {selected && null}
+      {selected && <Card {...selected} setSelected={setSelected}/>}
     </div>
   );
 };
