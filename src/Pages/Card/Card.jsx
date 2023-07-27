@@ -1,12 +1,11 @@
-
 import React from "react";
-import { useDispatch } from "react-redux";
-
 const Card = ({ name, price, image, setSelected }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
       <div className="p-6 rounded-md shadow-md bg-gray-900 text-white">
-        <h2 className="text-white mb-2">Product Details - {name} ${price} USD</h2>
+        <h2 className="text-white mb-2 bg-gray-900">
+          Product Details - {name} ${price} USD
+        </h2>
         <input
           type="text"
           placeholder="Name"

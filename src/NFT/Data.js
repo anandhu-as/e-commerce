@@ -73,6 +73,12 @@ export const datas = [
       "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
     name: "TokenTens",
     price: 1240000,
+  },  {
+    id: 12,
+    image:
+      "https://static.moneymade.io/cdn-cgi/image/width=570,quality=100,format=auto/https://static.moneymade.io/6_22a32255ec/6_22a32255ec.png",
+    name: "TokenTen",
+    price: 1240000,
   },
 ];
 export const logo = "https://cdn-icons-png.flaticon.com/512/6298/6298900.png";
