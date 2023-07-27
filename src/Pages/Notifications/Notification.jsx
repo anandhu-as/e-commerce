@@ -19,6 +19,9 @@ const Notification = () => {
           </h1>
         );
       })}
+      {notifications.clearNotification.map((item)=>{
+        return <h2 className="text-pink-700">{item} removed from bag</h2>
+      })}
       {message.length === 0 && (
         <h1 className="text-white font-bold mt-4">no Notifications </h1>
       )}

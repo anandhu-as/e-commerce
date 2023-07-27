@@ -8,6 +8,7 @@ const initialState = {
   notifications: {
     sameProduct: [],
     cartNotification: [],
+    clearNotification: [],
   },
 };
 const ProductSlice = createSlice({
@@ -25,10 +26,11 @@ const ProductSlice = createSlice({
       state.total = state.cartItemCount * price;
     },
     remove: (state, { payload }) => {
-      const { id, price } = payload;
+      const { id, price, name } = payload;
       state.cart = state.cart.filter((item) => item.id !== id);
       state.cartItemCount = state.cart.length;
       state.total = state.cartItemCount * price;
+      state.notifications.clearNotification.push(name);
     },
     clear: (state) => {
       state.cart = [];

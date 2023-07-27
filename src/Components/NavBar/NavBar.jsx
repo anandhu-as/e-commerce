@@ -17,7 +17,7 @@ export const NavBar = () => {
       </h3>
       <div>
         <Link to="/cart">
-          <i className="fa-solid fa-cart-shopping pr-4"></i>
+          <i className="fa fa-shopping-bag mr-2" aria-hidden="true"></i>
           {cart.length === 0 ? null : cart.length}
         </Link>
         <Link className="" to="/notification">
