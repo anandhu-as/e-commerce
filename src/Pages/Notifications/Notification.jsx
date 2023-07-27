@@ -19,7 +19,7 @@ const Notification = () => {
           </h1>
         );
       })}
-      {message === 0 && (
+      {message.length === 0 && (
         <h1 className="text-white font-bold mt-4">no Notifications </h1>
       )}
       {notifications.cartNotification.map((data) => (

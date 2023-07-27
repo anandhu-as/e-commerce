@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clear, remove } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
-import Card from "../Card/Card";
 const Cart = () => {
   const dispatch = useDispatch();
-  const { cart, total } = useSelector((state) => state.products);
-  const [selected, setSelected] = useState(null);
+  const { cart, total } = useSelector(state => state.products);
   return (
     <div className="flex pt-16">
       <div className="w-1/4 py-4 px-8 text-white  h-screen">
@@ -38,24 +36,17 @@ const Cart = () => {
             </div>
             <div className="ml-auto">
               <button
-                className="px-4 py-2 text-white rounded-lg mr-2 bg-red-500"
+                className="px-4 py-2 text-white rounded-lg mr-6 bg-red-500"
                 onClick={() =>
                   dispatch(remove({ id: data.id, price: data.price }))
                 }
               >
                 Remove
               </button>
-              <button
-                className="px-4 py-2 bg-green-600 text-white rounded-lg mr-4"
-                onClick={() => setSelected(data)}
-              >
-                Buy Now
-              </button>
             </div>
           </div>
         ))}
       </div>
-      {selected && <Card {...selected} setSelected={setSelected} />}
     </div>
   );
 };
