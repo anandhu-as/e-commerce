@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clear, remove } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
-import Popup from "../../Components/Popup/Popup";
 const Cart = () => {
   const dispatch = useDispatch();
   const [popUp, setPopUp] = useState(false);
   const { cart, total } = useSelector((state) => state.products);
   const handleRemove = (id, price, name) => {
-    dispatch(remove(id, price,name));
+    dispatch(remove(id, price, name));
     setPopUp(true);
     setTimeout(() => {
       setPopUp(false);
@@ -17,7 +16,6 @@ const Cart = () => {
   return (
     <div className="flex pt-16">
       <div className="w-1/4 py-4 px-8 text-white  h-screen">
-        {popUp && <Popup text="product is removed from bag" />}
         <h2 className="text-2xl font-bold mb-4 animate__animated animate__fadeInLeft">
           {cart.length === 0 ? "bag is empty" : ` ${cart.length} item on bag`}
         </h2>
