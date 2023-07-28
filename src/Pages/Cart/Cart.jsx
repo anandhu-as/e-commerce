@@ -4,7 +4,6 @@ import { clear, remove } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
 const Cart = () => {
   const dispatch = useDispatch();
-  const [popUp, setPopUp] = useState(false);
   const { cart, total } = useSelector((state) => state.products);
   const handleRemove = (id, price, name) => {
     dispatch(remove(id, price, name));
