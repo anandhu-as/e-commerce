@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clear, remove } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
@@ -42,6 +41,8 @@ const Cart = () => {
               <h3 className="text-white">$ {data.price} USD</h3>
             </div>
             <div className="ml-auto">
+              <button className=" text-white mr-6">+</button>
+              <button className=" text-white   mr-8">-</button>
               <button
                 className="px-4 py-2 text-white rounded-lg mr-6 bg-red-500"
                 onClick={() =>
