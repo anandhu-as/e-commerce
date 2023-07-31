@@ -6,10 +6,6 @@ const Cart = () => {
   const { cart, total } = useSelector((state) => state.products);
   const handleRemove = (id, price, name) => {
     dispatch(remove(id, price, name));
-    setPopUp(true);
-    setTimeout(() => {
-      setPopUp(false);
-    }, 3000);
   };
   return (
     <div className="flex pt-16">

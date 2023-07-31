@@ -20,16 +20,16 @@ const ProductSlice = createSlice({
       const same = state.cart.find((cartItem) => cartItem.id === item.id);
       same
         ? state.notifications.sameProduct.push(item)
-        : state.cart.push(item) &&
+        : state.cart.push({...item,quantity:1}) &&
           state.notifications.cartNotification.push(item);
       state.cartItemCount = state.cart.length;
-     // state.total = state.cartItemCount * price; //
+      state.total = state.cartItemCount * price;
     },
     remove: (state, { payload }) => {
       const { id, price, name } = payload;
       state.cart = state.cart.filter((item) => item.id !== id);
       state.cartItemCount = state.cart.length;
-      state.total = state.cartItemCount * price
+      state.total = state.cartItemCount * price;
       state.notifications.clearNotification.push(name);
     },
     clear: (state) => {
@@ -39,6 +39,7 @@ const ProductSlice = createSlice({
     clearSpam: (state) => {
       state.notifications.cartNotification = [];
       state.notifications.sameProduct = [];
+      state.notifications.clearNotification = [];
     },
   },
 });
