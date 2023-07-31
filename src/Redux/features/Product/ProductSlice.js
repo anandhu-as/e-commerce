@@ -23,7 +23,7 @@ const ProductSlice = createSlice({
         : state.cart.push({...item,quantity:1}) &&
           state.notifications.cartNotification.push(item);
       state.cartItemCount = state.cart.length;
-      state.total = state.cartItemCount * price;
+    //  state.total = state.cartItemCount * price;///
     },
     remove: (state, { payload }) => {
       const { id, price, name } = payload;

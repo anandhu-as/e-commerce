@@ -3,9 +3,16 @@ import { clear, remove } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
 const Cart = () => {
   const dispatch = useDispatch();
-  const { cart, total } = useSelector((state) => state.products);
+  const { cart } = useSelector((state) => state.products);
   const handleRemove = (id, price, name) => {
     dispatch(remove(id, price, name));
+  };
+  const totalAmount = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total = total + item.price * item.quantity;
+    });
+    return total
   };
   return (
     <div className="flex pt-16">
@@ -14,7 +21,7 @@ const Cart = () => {
           {cart.length === 0 ? "bag is empty" : ` ${cart.length} item on bag`}
         </h2>
         <h3 className="animate__animated animate__fadeInLeft">
-          Total : $ {total} USD
+          Total : $ {totalAmount()} USD
         </h3>
         <button
           className="px-4 py-2 bg-red-500 rounded mt-8"
