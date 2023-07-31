@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clear,
@@ -6,12 +7,15 @@ import {
   remove,
 } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
+
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.products);
+
   const handleRemove = (id, price, name) => {
     dispatch(remove(id, price, name));
   };
+
   const totalAmount = () => {
     let total = 0;
     cart.forEach((item) => {
@@ -19,9 +23,10 @@ const Cart = () => {
     });
     return total;
   };
+
   return (
     <div className="flex pt-16">
-      <div className="w-1/4 py-4 px-8 text-white  h-screen">
+      <div className="w-1/4 py-4 px-8 text-white h-screen">
         <h2 className="text-2xl font-bold mb-4 animate__animated animate__fadeInLeft">
           {cart.length === 0 ? "bag is empty" : ` ${cart.length} item on bag`}
         </h2>
@@ -29,18 +34,18 @@ const Cart = () => {
           Total : $ {totalAmount()} USD
         </h3>
         <button
-          className="px-4 py-2 bg-red-500 rounded mt-8"
+          className="px-4 py-2 bg-red-500 rounded-lg mt-8 text-lg"
           onClick={() => dispatch(clear())}
         >
           Remove all
         </button>
-        <button className="px-4 py-2 bg-blue-400 rounded mt-8 ml-4">
+        <button className="px-4 py-2 bg-blue-400 rounded-lg mt-8 ml-4 text-lg">
           <Link to="/store" className="bg-blue-400">
             continue browsing
           </Link>
         </button>
       </div>
-      <div className="flex-1 p-4 ">
+      <div className="flex-1 p-4">
         {cart.map((data) => (
           <div key={data.id} className="flex items-center mb-4">
             <img src={data.image} alt={data.name} className="w-16 h-16 mr-4" />
@@ -51,13 +56,13 @@ const Cart = () => {
             <h2 className="text-white ml-16">{data.quantity}</h2>
             <div className="ml-auto">
               <button
-                className=" text-white mr-6"
+                className="text-white mr-6 text-lg"
                 onClick={() => dispatch(incrementQuantity({ id: data.id }))}
               >
                 +
               </button>
               <button
-                className=" text-white   mr-8"
+                className="text-white mr-8 text-lg"
                 onClick={() =>
                   data.quantity === 1
                     ? dispatch(
@@ -73,7 +78,7 @@ const Cart = () => {
                 -
               </button>
               <button
-                className="px-4 py-2 text-white rounded-lg mr-6 bg-red-500"
+                className="px-4 py-2 text-white rounded-lg mr-6 bg-red-500 text-lg"
                 onClick={() =>
                   handleRemove({
                     id: data.id,
