@@ -22,7 +22,7 @@ const Notification = () => {
       {notifications.clearNotification.map((item) => {
         return (
           <h2 className="text-pink-700" key={item.id}>
-            {item} removed from bag
+            {item.name} removed from bag
           </h2>
         );
       })}

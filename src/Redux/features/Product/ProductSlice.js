@@ -28,7 +28,7 @@ const ProductSlice = createSlice({
       const { id, name } = payload;
       state.cart = state.cart.filter((item) => item.id !== id);
       state.cartItemCount = state.cart.length;
-      state.notifications.clearNotification.push(name);
+      state.notifications.clearNotification.push({name,id});
     },
     clear: (state) => {
       state.cart = [];
@@ -60,5 +60,5 @@ export const {
   clear,
   clearSpam,
   incrementQuantity,
-  decrementQuantity
+  decrementQuantity,
 } = ProductSlice.actions;
