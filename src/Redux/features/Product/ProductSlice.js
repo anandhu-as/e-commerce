@@ -45,6 +45,12 @@ const ProductSlice = createSlice({
       sameID ? (sameID.quantity += 1) : state.cart.push({ id, quantity: 1 });
       state.cartItemCount = state.cart.length;
     },
+    decrementQuantity: (state, action) => {
+      const { id } = action.payload;
+      const sameID = state.cart.find((item) => item.id == id);
+      sameID ? (sameID.quantity -= 1) : state.cart.push({ id, quantity: 1 });
+      state.cartItemCount = state.cart.length;
+    },
   },
 });
 export default ProductSlice.reducer;
@@ -54,4 +60,5 @@ export const {
   clear,
   clearSpam,
   incrementQuantity,
+  decrementQuantity
 } = ProductSlice.actions;

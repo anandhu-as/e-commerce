@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   clear,
+  decrementQuantity,
   incrementQuantity,
   remove,
 } from "../../Redux/features/Product/ProductSlice";
@@ -55,7 +56,22 @@ const Cart = () => {
               >
                 +
               </button>
-              <button className=" text-white   mr-8">-</button>
+              <button
+                className=" text-white   mr-8"
+                onClick={() =>
+                  data.quantity === 1
+                    ? dispatch(
+                        remove({
+                          id: data.id,
+                          price: data.price,
+                          name: data.name,
+                        })
+                      )
+                    : dispatch(decrementQuantity({ id: data.id }))
+                }
+              >
+                -
+              </button>
               <button
                 className="px-4 py-2 text-white rounded-lg mr-6 bg-red-500"
                 onClick={() =>
