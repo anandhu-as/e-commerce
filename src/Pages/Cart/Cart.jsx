@@ -11,11 +11,9 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.products);
-
   const handleRemove = (id, price, name) => {
     dispatch(remove(id, price, name));
   };
-
   const totalAmount = () => {
     let total = 0;
     cart.forEach((item) => {
@@ -23,7 +21,6 @@ const Cart = () => {
     });
     return total;
   };
-
   return (
     <div className="flex flex-col sm:flex-row pt-16">
       <div className="w-full sm:w-1/4 py-4 px-8 text-white h-screen sm:h-auto">
