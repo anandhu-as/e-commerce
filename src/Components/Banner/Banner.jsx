@@ -13,7 +13,7 @@ const Banner = () => {
       </div>
       <div className="w-1/2">
         <h1 className="text-4xl font-bold mb-4 text-pink-800 pr-6 animate__animated animate__fadeInDown heading-animate">
-          What is BORED-APES ?
+          BORED-APES
         </h1>
         <p className="text-purple-600 pr-4 animate__animated animate__fadeInDown text-animate">
           {homeParagraph}
@@ -21,9 +21,15 @@ const Banner = () => {
         <div className="flex items-start mt-4  px-6 py-3  animate__animated animate__fadeInDown">
           <Link
             to="/store"
-            className=" bg-purple-800 px-6 py-3 bg-purple-700 text-white rounded hover:bg-purple-800 mt-4 animate__animated animate__fadeInUp"
+            className=" bg-pink-800 px-6 py-3 bg-purple-700 text-white rounded hover:bg-purple-800 mt-4 animate__animated animate__fadeInUp"
           >
             Explore
+          </Link>
+          <Link
+            to="/about"
+            className=" bg-purple-800 px-6 py-3 bg-purple-700 text-white rounded hover:bg-pink-800 mt-4 animate__animated animate__fadeInUp ml-8"
+          >
+            About
           </Link>
         </div>
       </div>
