@@ -7,7 +7,6 @@ import {
   remove,
 } from "../../Redux/features/Product/ProductSlice";
 import { Link } from "react-router-dom";
-
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.products);
