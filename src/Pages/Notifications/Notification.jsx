@@ -5,11 +5,9 @@ import { clearSpam } from "../../Redux/features/Product/ProductSlice";
 
 const Notification = () => {
   const { notifications } = useSelector((state) => state.products);
-  const { reactions } = useSelector((state) => state.emoji);
-  const likes = reactions.likes.length;
   const dispatch = useDispatch();
-  const message =
-    notifications.cartNotification.length && notifications.sameProduct.length;
+
+  notifications.cartNotification.length && notifications.sameProduct.length;
   return (
     <div className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 border border-gray-400 rounded p-4 ">
       {notifications.sameProduct.map((item) => {
@@ -26,9 +24,10 @@ const Notification = () => {
           </h2>
         );
       })}
-      {message.length === 0 && (
-        <h1 className="text-white font-bold mt-4">no Notifications </h1>
-      )}
+      {notifications.cartNotification.length ||
+        (notifications.clearNotification.length === 0 && (
+          <h1 className="text-white font-bold mt-4">no Notifications </h1>
+        ))}
       {notifications.cartNotification.map((data) => (
         <div key={data.id}>
           <h1 className="text-white font-bold mt-4">
