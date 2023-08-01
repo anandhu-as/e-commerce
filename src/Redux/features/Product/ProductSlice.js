@@ -22,7 +22,6 @@ const ProductSlice = createSlice({
         : state.cart.push({ ...item, quantity: 1 }) &&
           state.notifications.cartNotification.push(item);
       state.cartItemCount = state.cart.length;
-      //  state.total = state.cartItemCount * price;///
     },
     remove: (state, { payload }) => {
       const { id, name } = payload;
@@ -51,6 +50,12 @@ const ProductSlice = createSlice({
       sameID ? (sameID.quantity -= 1) : state.cart.push({ id, quantity: 1 });
       state.cartItemCount = state.cart.length;
     },
+    totalAmount: (state, action) => {
+      let total = 0;
+      state.cart.forEach((item) => {
+        total += item.price * item.quantity;
+      });
+    },
   },
 });
 export default ProductSlice.reducer;
@@ -61,4 +66,5 @@ export const {
   clearSpam,
   incrementQuantity,
   decrementQuantity,
+  totalAmount
 } = ProductSlice.actions;

@@ -6,7 +6,6 @@ import { clearSpam } from "../../Redux/features/Product/ProductSlice";
 const Notification = () => {
   const { notifications } = useSelector((state) => state.products);
   const dispatch = useDispatch();
-
   notifications.cartNotification.length && notifications.sameProduct.length;
   return (
     <div className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 border border-gray-400 rounded p-4 ">
