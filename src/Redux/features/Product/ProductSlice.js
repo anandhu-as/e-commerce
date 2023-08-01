@@ -15,7 +15,7 @@ const ProductSlice = createSlice({
   initialState,
   reducers: {
     add: (state, { payload }) => {
-      const { item, price } = payload;
+      const { item } = payload;
       const same = state.cart.find((cartItem) => cartItem.id === item.id);
       same
         ? state.notifications.sameProduct.push(item)
@@ -28,7 +28,7 @@ const ProductSlice = createSlice({
       const { id, name } = payload;
       state.cart = state.cart.filter((item) => item.id !== id);
       state.cartItemCount = state.cart.length;
-      state.notifications.clearNotification.push({name,id});
+      state.notifications.clearNotification.push({ name, id });
     },
     clear: (state) => {
       state.cart = [];

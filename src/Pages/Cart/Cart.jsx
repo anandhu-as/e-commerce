@@ -25,8 +25,8 @@ const Cart = () => {
   };
 
   return (
-    <div className="flex pt-16">
-      <div className="w-1/4 py-4 px-8 text-white h-screen">
+    <div className="flex flex-col sm:flex-row pt-16">
+      <div className="w-full sm:w-1/4 py-4 px-8 text-white h-screen sm:h-auto">
         <h2 className="text-2xl font-bold mb-4 animate__animated animate__fadeInLeft">
           {cart.length === 0 ? "bag is empty" : ` ${cart.length} item on bag`}
         </h2>
