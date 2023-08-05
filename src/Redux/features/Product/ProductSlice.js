@@ -38,8 +38,8 @@ const ProductSlice = createSlice({
       state.notifications.sameProduct = [];
       state.notifications.clearNotification = [];
     },
-    incrementQuantity: (state, {payload}) => {
-      const { id } = payload
+    incrementQuantity: (state, { payload }) => {
+      const { id } = payload;
       const sameID = state.cart.find((item) => item.id == id);
       sameID ? (sameID.quantity += 1) : state.cart.push({ id, quantity: 1 });
       state.cartItemCount = state.cart.length;
