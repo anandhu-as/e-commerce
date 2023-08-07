@@ -55,7 +55,7 @@ const Cart = () => {
                 className="text-white mr-6 text-lg"
                 onClick={() => dispatch(incrementQuantity({ id: data.id }))}
               >
-                +
+                <i className="fa-solid fa-plus"></i>
               </button>
               <button
                 className="text-white mr-8 text-lg"
@@ -71,7 +71,7 @@ const Cart = () => {
                     : dispatch(decrementQuantity({ id: data.id }))
                 }
               >
-                -
+                <i className="fa-solid fa-minus"></i>
               </button>
               <button
                 className="px-4 py-2 text-white rounded-lg mr-6 bg-red-500 text-lg"
